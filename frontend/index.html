@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مطعم عبق التراثي الذكي - تجربة طعام تراثية مع تقنيات ذكاء اصطناعي متقدمة">
+    <meta name="keywords" content="مطعم, تراثي, ذكي, AI, طعام عربي, حجز طاولات">
+    <title>مطعم عبق التراثي الذكي | تجربة طعام استثنائية</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="arabic-pattern"></div>
+            <h1 class="loading-title">عبق التراثي</h1>
+            <div class="loading-spinner"></div>
+            <p class="loading-text">جاري التحضير...</p>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="main-header" id="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-content">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <i class="fas fa-utensils"></i>
+                        <span class="logo-text">عبق التراثي</span>
+                        <span class="logo-subtitle">الذكي</span>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <ul class="nav-links" id="nav-links">
+                        <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+                        <li><a href="#menu" class="nav-link">القائمة</a></li>
+                        <li><a href="#ai-features" class="nav-link">الميزات الذكية</a></li>
+                        <li><a href="#reservations" class="nav-link">الحجوزات</a></li>
+                        <li><a href="#reviews" class="nav-link">التقييمات</a></li>
+                        <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+                    </ul>
+
+                    <!-- Action Buttons -->
+                    <div class="nav-actions">
+                        <button class="btn-icon" id="voice-order-btn" title="الطلب الصوتي">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="btn-icon" id="cart-btn" title="السلة">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cart-count">0</span>
+                        </button>
+                        <button class="btn-primary" id="login-btn">تسجيل الدخول</button>
+                        <button class="btn-icon menu-toggle" id="menu-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-pattern"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        تجربة طعام ذكية
+                    </span>
+                    <h1 class="hero-title">
+                        <span class="title-main">مطعم عبق</span>
+                        <span class="title-sub">التراثي الذكي</span>
+                    </h1>
+                    <p class="hero-description">
+                        نجمع بين عبق التراث الأصيل وتقنيات الذكاء الاصطناعي الحديثة لنقدم لك 
+                        تجربة طعام لا تُنسى. اكتشف نكهات تراثية مع خدمة ذكية ومتطورة.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn-hero btn-primary" onclick="scrollToSection('menu')">
+                            <i class="fas fa-utensils"></i>
+                            تصفح القائمة
+                        </button>
+                        <button class="btn-hero btn-secondary" id="ai-assistant-btn">
+                            <i class="fas fa-robot"></i>
+                            المساعد الذكي
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <strong>10,000+</strong>
+                            <span>عميل سعيد</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-star"></i>
+                            <strong>4.9</strong>
+                            <span>تقييم ممتاز</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-concierge-bell"></i>
+                            <strong>150+</strong>
+                            <span>طبق مميز</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-decoration"></div>
+                    <div class="floating-card">
+                        <i class="fas fa-robot"></i>
+                        <p>مساعد ذكي متوفر 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- AI Features Section -->
+    <section class="ai-features" id="ai-features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">التكنولوجيا الذكية</span>
+                <h2 class="section-title">ميزات الذكاء الاصطناعي</h2>
+                <p class="section-description">
+                    نستخدم أحدث تقنيات الذكاء الاصطناعي لتحسين تجربتك
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>التوصيات الذكية</h3>
+                    <p>نظام توصيات مخصص يقترح الأطباق المثالية حسب تفضيلاتك وتاريخ طلباتك</p>
+                    <button class="feature-btn" onclick="openAIFeature('recommendations')">
+                        جرب الآن <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>المساعد الافتراضي</h3>
+                    <p>شات بوت ذكي يجيب على استفساراتك ويساعدك في الطلب والحجز على مدار الساعة</p>
+                    <button class="feature-btn" onclick="openChatbot()">
+                        تحدث الآن <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>التعرف على الأطباق</h3>
+                    <p>التقط صورة لأي طبق واحصل على معلومات كاملة عن المكونات والسعر</p>
+                    <button class="feature-btn" onclick="openImageRecognition()">
+                        التقط صورة <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>الطلب الصوتي</h3>
+                    <p>اطلب وجبتك المفضلة باستخدام صوتك فقط بدون عناء الكتابة</p>
+                    <button class="feature-btn" onclick="startVoiceOrder()">
+                        ابدأ الطلب <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>تحليل المراجعات</h3>
+                    <p>نستخدم تحليل المشاعر لفهم آراء عملائنا وتحسين خدماتنا باستمرار</p>
+                    <button class="feature-btn" onclick="viewAnalytics()">
+                        عرض التحليل <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>الحجز الذكي</h3>
+                    <p>نظام حجز تلقائي يختار أفضل الأوقات والطاولات حسب تفضيلاتك</p>
+                    <button class="feature-btn" onclick="smartReservation()">
+                        احجز الآن <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">قائمتنا المميزة</span>
+                <h2 class="section-title">اكتشف نكهات التراث</h2>
+                <p class="section-description">
+                    أطباق تراثية أصيلة بلمسة عصرية
+                </p>
+            </div>
+
+            <!-- Menu Filter -->
+            <div class="menu-filter">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="appetizers">المقبلات</button>
+                <button class="filter-btn" data-filter="main">الأطباق الرئيسية</button>
+                <button class="filter-btn" data-filter="grills">المشاوي</button>
+                <button class="filter-btn" data-filter="desserts">الحلويات</button>
+                <button class="filter-btn" data-filter="drinks">المشروبات</button>
+            </div>
+
+            <!-- Menu Items Grid -->
+            <div class="menu-grid" id="menu-grid">
+                <!-- Items will be loaded dynamically via JavaScript -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="menu-actions">
+                <button class="btn-primary" id="load-more-btn">
+                    عرض المزيد <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section class="reservations-section" id="reservations">
+        <div class="container">
+            <div class="reservations-content">
+                <div class="reservation-info">
+                    <span class="section-badge">احجز طاولتك</span>
+                    <h2 class="section-title">حجز ذكي وسريع</h2>
+                    <p class="section-description">
+                        استخدم نظامنا الذكي لحجز طاولة في الوقت والمكان المثالي لك.
+                        نظامنا يتعلم من تفضيلاتك ويقترح أفضل الخيارات المتاحة.
+                    </p>
+                    <ul class="reservation-features">
+                        <li><i class="fas fa-check"></i> حجز فوري ومؤكد</li>
+                        <li><i class="fas fa-check"></i> اقتراحات ذكية للأوقات</li>
+                        <li><i class="fas fa-check"></i> تذكير تلقائي بالموعد</li>
+                        <li><i class="fas fa-check"></i> إلغاء مجاني حتى ساعتين قبل الموعد</li>
+                    </ul>
+                </div>
+
+                <div class="reservation-form-container">
+                    <form class="reservation-form" id="reservation-form">
+                        <h3>املأ بياناتك</h3>
+                        
+                        <div class="form-group">
+                            <label for="res-name">الاسم الكامل</label>
+                            <input type="text" id="res-name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="res-phone">رقم الهاتف</label>
+                            <input type="tel" id="res-phone" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="res-date">التاريخ</label>
+                                <input type="date" id="res-date" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="res-time">الوقت</label>
+                                <input type="time" id="res-time" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="res-guests">عدد الأشخاص</label>
+                                <select id="res-guests" required>
+                                    <option value="">اختر</option>
+                                    <option value="1">شخص واحد</option>
+                                    <option value="2">شخصان</option>
+                                    <option value="3">3 أشخاص</option>
+                                    <option value="4">4 أشخاص</option>
+                                    <option value="5">5 أشخاص</option>
+                                    <option value="6+">6+ أشخاص</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="res-section">القسم المفضل</label>
+                                <select id="res-section">
+                                    <option value="any">أي قسم</option>
+                                    <option value="indoor">داخلي</option>
+                                    <option value="outdoor">خارجي</option>
+                                    <option value="vip">VIP</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="res-notes">ملاحظات خاصة (اختياري)</label>
+                            <textarea id="res-notes" rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-block">
+                            <i class="fas fa-calendar-check"></i>
+                            تأكيد الحجز
+                        </button>
+
+                        <button type="button" class="btn-secondary btn-block" id="smart-suggest-btn">
+                            <i class="fas fa-magic"></i>
+                            اقتراح ذكي لأفضل وقت
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">آراء العملاء</span>
+                <h2 class="section-title">ماذا يقول عملاؤنا</h2>
+                <div class="overall-rating">
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="rating-text">4.9 من 5 (2,847 تقييم)</span>
+                </div>
+            </div>
+
+            <div class="reviews-grid" id="reviews-grid">
+                <!-- Reviews will be loaded dynamically -->
+            </div>
+
+            <div class="review-actions">
+                <button class="btn-primary" id="add-review-btn">
+                    <i class="fas fa-plus"></i>
+                    أضف تقييمك
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>تواصل معنا</h2>
+                    <p>نحن هنا للإجابة على جميع استفساراتك</p>
+
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>العنوان</h4>
+                                <p>نابلس، فلسطين<br>شارع رفيديا الرئيسي</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>الهاتف</h4>
+                                <p dir="ltr">+970-9-238-5555</p>
+                                <p dir="ltr">+970-599-123-456</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>البريد الإلكتروني</h4>
+                                <p>info@abaq-restaurant.ps</p>
+                                <p>reservations@abaq-restaurant.ps</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>ساعات العمل</h4>
+                                <p>السبت - الخميس: 10:00 صباحاً - 12:00 منتصف الليل</p>
+                                <p>الجمعة: 2:00 ظهراً - 12:00 منتصف الليل</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <h3>أرسل رسالة</h3>
+
+                        <div class="form-group">
+                            <input type="text" id="contact-name" placeholder="الاسم" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="contact-email" placeholder="البريد الإلكتروني" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="tel" id="contact-phone" placeholder="رقم الهاتف">
+                        </div>
+
+                        <div class="form-group">
+                            <select id="contact-subject" required>
+                                <option value="">اختر الموضوع</option>
+                                <option value="reservation">استفسار عن حجز</option>
+                                <option value="menu">استفسار عن القائمة</option>
+                                <option value="complaint">شكوى</option>
+                                <option value="suggestion">اقتراح</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="contact-message" rows="5" placeholder="رسالتك" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i>
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>عن المطعم</h3>
+                    <p>مطعم عبق التراثي الذكي يجمع بين الأصالة والتكنولوجيا الحديثة لتقديم تجربة طعام فريدة ومميزة.</p>
+                    <div class="footer-badges">
+                        <img src="https://via.placeholder.com/100x40/2c5f2d/ffffff?text=HALAL" alt="حلال">
+                        <img src="https://via.placeholder.com/100x40/b8860b/ffffff?text=QUALITY" alt="جودة">
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#menu">القائمة</a></li>
+                        <li><a href="#ai-features">الميزات الذكية</a></li>
+                        <li><a href="#reservations">الحجوزات</a></li>
+                        <li><a href="#reviews">التقييمات</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>خدماتنا</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الطلب عبر الإنترنت</a></li>
+                        <li><a href="#">التوصيل للمنازل</a></li>
+                        <li><a href="#">تنظيم المناسبات</a></li>
+                        <li><a href="#">الكيترينج</a></li>
+                        <li><a href="#">بطاقات الهدايا</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>اشترك في النشرة</h3>
+                    <p>احصل على آخر العروض والأخبار</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="بريدك الإلكتروني" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 مطعم عبق التراثي الذكي. جميع الحقوق محفوظة.</p>
+                <div class="footer-links-bottom">
+                    <a href="#">سياسة الخصوصية</a>
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الاسترجاع</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbot-widget">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-title">
+                <h4>المساعد الذكي</h4>
+                <span class="chatbot-status">متصل</span>
+            </div>
+            <button class="chatbot-close" id="chatbot-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="bot-message">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <p>مرحباً! أنا المساعد الذكي لمطعم عبق التراثي. كيف يمكنني مساعدتك اليوم؟</p>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="اكتب رسالتك هنا...">
+            <button id="chatbot-send">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle Button -->
+    <button class="chatbot-toggle" id="chatbot-toggle">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>سلة الطلبات</h3>
+            <button class="cart-close" id="cart-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="cart-empty">السلة فارغة</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>المجموع:</span>
+                <strong id="cart-total">0.00 ₪</strong>
+            </div>
+            <button class="btn-primary btn-block" id="checkout-btn">
+                <i class="fas fa-check"></i>
+                إتمام الطلب
+            </button>
+        </div>
+    </div>
+
+    <!-- Modals will be added via JavaScript -->
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/ai-features.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/reservations.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
